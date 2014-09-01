@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd" name="test-perspective"
+    xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <requiredProperties>
+    <requiredProperty key="perspectiveName">
+      <defaultValue>TestPerspective</defaultValue>
+    </requiredProperty>
+    <requiredProperty key="namespace">
+      <defaultValue>nameXspaceX</defaultValue>
+    </requiredProperty>
+  </requiredProperties>
+  <modules>
+    <module id="${rootArtifactId}-cms" dir="cms" name="${rootArtifactId}-cms">
+      <fileSets>
+        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+          <directory>src/main/java</directory>
+          <includes>
+            <include>**/*.java</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory>src/main/resources</directory>
+          <includes>
+            <include>**/*.json</include>
+            <include>**/*.png</include>
+            <include>**/*.js</include>
+            <include>**/*.map</include>
+            <include>**/*.html</include>
+            <include>**/*.properties</include>
+            <include>**/*.txt</include>
+            <include>**/*.css</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+    <module id="${rootArtifactId}-repository" dir="repository" name="${rootArtifactId}-repository">
+      <fileSets>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>src/main/resources</directory>
+          <includes>
+            <include>**/*.xml</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+  </modules>
+</archetype-descriptor>
