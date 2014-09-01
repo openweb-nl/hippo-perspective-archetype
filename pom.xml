@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>nl.openweb.archetype</groupId>
+  <artifactId>perspective-archetype</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>maven-archetype</packaging>
+
+  <name>Perspective Archetype</name>
+
+  <build>
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.archetype</groupId>
+        <artifactId>archetype-packaging</artifactId>
+        <version>2.2</version>
+      </extension>
+    </extensions>
+
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-archetype-plugin</artifactId>
+          <version>2.2</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+  <description>Hippo CMS7 Release POM</description>
+
+  <url>http://www.onehippo.org/cms7/hippo-cms7-release/test-perspective/</url>
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <scm>
+    <connection>scm:git:ssh://git@stash.open-web.nl:7999/inter/perspective-archetype.git</connection>
+    <developerConnection>scm:svn:ssh://git@stash.open-web.nl:7999/inter/perspective-archetype.git</developerConnection>
+    <url>https://stash.open-web.nl/projects/INTER/repos/perspective-archetype/browse</url>
+  </scm>
+
+  <distributionManagement>
+    <repository>
+      <id>openweb-nexus-releases</id>
+      <url>https://nexus.open-web.nl/nexus/content/repositories/releases/</url>
+    </repository>
+    <snapshotRepository>
+      <id>openweb-nexus-snapshots</id>
+      <url>https://nexus.open-web.nl/nexus/content/repositories/snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+</project>
