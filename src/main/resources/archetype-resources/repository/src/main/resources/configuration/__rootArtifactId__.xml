@@ -10,7 +10,7 @@
       <sv:value>frontend:plugin</sv:value>
     </sv:property>
     <sv:property sv:name="plugin.class" sv:type="String">
-      <sv:value>${package}.${perspectiveName}</sv:value>
+      <sv:value>${package}.ui.${perspectiveName}</sv:value>
     </sv:property>
     <sv:property sv:name="wicket.id" sv:type="String">
       <sv:value>service.tab</sv:value>

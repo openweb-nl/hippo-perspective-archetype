@@ -1,7 +1,7 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-package ${package};
+package ${package}.ui;
 
 import org.apache.wicket.markup.head.CssHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
@@ -19,7 +19,7 @@ public class ${perspectiveName} extends Perspective {
 
     private static final long serialVersionUID = 1L;
     private static final CssResourceReference PERSPECTIVE_SKIN = new CssResourceReference(${perspectiveName}.class,
-            "${parentArtifactId}.css");
+            "${rootArtifactId}.css");
 
     public ${perspectiveName}(final IPluginContext context, final IPluginConfig config) {
         super(context, config);
@@ -32,7 +32,7 @@ public class ${perspectiveName} extends Perspective {
 
     @Override
     public ResourceReference getIcon(IconSize type) {
-        return new PackageResourceReference(${perspectiveName}.class, "${parentArtifactId}-" + type.getSize() + ".png");
+        return new PackageResourceReference(${perspectiveName}.class, "${rootArtifactId}-" + type.getSize() + ".png");
     }
 
     @Override

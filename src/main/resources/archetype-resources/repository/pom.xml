@@ -10,7 +10,7 @@
   <artifactId>${artifactId}</artifactId>
   <packaging>jar</packaging>
 
-  <name>test-perspective-repository</name>
+  <name>${artifactId}</name>
 
 
 </project>

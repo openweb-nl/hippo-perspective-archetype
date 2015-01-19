@@ -10,7 +10,7 @@
   <artifactId>${artifactId}</artifactId>
   <packaging>jar</packaging>
 
-  <name>test-perspective-cms</name>
+  <name>${artifactId}</name>
 
   <dependencies>
     <dependency>

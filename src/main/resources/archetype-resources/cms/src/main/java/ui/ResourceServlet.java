@@ -18,7 +18,7 @@
  *  
  *  modified by Ebrahim Aharpour
  */
-package ${package};
+package ${package}.ui;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
