@@ -50,6 +50,7 @@ import org.slf4j.LoggerFactory;
 public class HippoAuthenticationRequestHandler implements RequestHandler {
 
     private static final Logger LOG = LoggerFactory.getLogger(HippoAuthenticationRequestHandler.class);
+    private Session session = null;
 
     public Response handleRequest(Message m, ClassResourceInfo resourceClass) {
         ISessionStore sessionStore = Application.get().getSessionStore();
@@ -61,13 +62,11 @@ public class HippoAuthenticationRequestHandler implements RequestHandler {
                 SimpleCredentials jcrCredentials = (SimpleCredentials) userCredentials.getJcrCredentials();
                 String username = jcrCredentials.getUserID();
                 String password = new String(jcrCredentials.getPassword());
-                Session session = null;
                 try {
-                    session = RepositoryConnectionUtils.createSession(username, password);
-                    if (isAuthenticated(session)) {
+                    session = JcrSessionUtil.createSession(username, password);
+                    if (isAuthenticated()) {
                         HttpServletRequest request = (HttpServletRequest) m.get(AbstractHTTPDestination.HTTP_REQUEST);
-                        request.setAttribute(AuthenticationConstants.HIPPO_CREDENTIALS, new SimpleCredentials(username,
-                                password.toCharArray()));
+                        request.setAttribute(AuthenticationConstants.HIPPO_SESSION, session);
                         return null;
                     } else {
                         throw new UnauthorizedException();
@@ -75,18 +74,22 @@ public class HippoAuthenticationRequestHandler implements RequestHandler {
                 } catch (LoginException e) {
                     LOG.debug("Login failed: {}", e);
                     throw new UnauthorizedException(e.getMessage());
-                } finally {
-                    RepositoryConnectionUtils.cleanupSession(session);
                 }
             }
         }
         throw new UnauthorizedException();
     }
 
-    private boolean isAuthenticated(Session session) {
-        if (session != null) {
-            return true;
+    @Override
+    public Response handleResponse(final Message m, final OperationResourceInfo ori, final Response response) {
+        if (session != null && session.isLive()) {
+            session.logout();
+            session = null;
         }
-        return false;
+        return null;
+    }
+
+    private boolean isAuthenticated() {
+        return session != null;
     }
 }

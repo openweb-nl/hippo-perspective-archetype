@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.onehippo.cms7</groupId>
     <artifactId>hippo-cms7-release</artifactId>
-    <version>7.9.1</version>
+    <version>7.9.5</version>
   </parent>
 
   <groupId>${groupId}</groupId>
@@ -16,15 +16,15 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <hippo.addon.webservices.version>0.1.0-SNAPSHOT</hippo.addon.webservices.version>
+    <hippo.addon.restful.webservices.version>0.2.0</hippo.addon.restful.webservices.version>
   </properties>
 
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>org.onehippo.forge.webservices</groupId>
-        <artifactId>hippo-addon-webservices</artifactId>
-        <version>${hippo.addon.webservices.version}</version>
+        <artifactId>hippo-addon-restful-webservices</artifactId>
+        <version>${hippo.addon.restful.webservices.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

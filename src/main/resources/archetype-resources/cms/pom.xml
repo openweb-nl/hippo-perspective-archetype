@@ -38,7 +38,7 @@
     </dependency>
     <dependency>
       <groupId>org.onehippo.forge.webservices</groupId>
-      <artifactId>hippo-addon-webservices</artifactId>
+      <artifactId>hippo-addon-restful-webservices</artifactId>
     </dependency>
   </dependencies>
 
