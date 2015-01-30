@@ -32,7 +32,9 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.Provider;
 
 import org.apache.cxf.jaxrs.ext.RequestHandler;
+import org.apache.cxf.jaxrs.ext.ResponseHandler;
 import org.apache.cxf.jaxrs.model.ClassResourceInfo;
+import org.apache.cxf.jaxrs.model.OperationResourceInfo;
 import org.apache.cxf.message.Message;
 import org.apache.cxf.transport.http.AbstractHTTPDestination;
 import org.apache.wicket.Application;
@@ -42,12 +44,12 @@ import org.hippoecm.frontend.model.UserCredentials;
 import org.hippoecm.frontend.session.PluginUserSession;
 import org.onehippo.forge.webservices.AuthenticationConstants;
 import org.onehippo.forge.webservices.jaxrs.exception.UnauthorizedException;
-import org.onehippo.forge.webservices.jaxrs.jcr.util.RepositoryConnectionUtils;
+import org.onehippo.forge.webservices.jaxrs.jcr.util.JcrSessionUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @Provider
-public class HippoAuthenticationRequestHandler implements RequestHandler {
+public class HippoAuthenticationRequestHandler implements RequestHandler,ResponseHandler {
 
     private static final Logger LOG = LoggerFactory.getLogger(HippoAuthenticationRequestHandler.class);
     private Session session = null;
