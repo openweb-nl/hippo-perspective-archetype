@@ -4,7 +4,7 @@ Perspective Archetype
 On Linux:
 
 	mvn archetype:generate \
-		-DarchetypeRepository=https://nexus.open-web.nl/nexus/content/repositories/releases/ \
+		-DarchetypeRepository=https://maven.open-web.nl/content/repositories/public/ \
 		-DarchetypeGroupId=nl.openweb.archetype \
 		-DarchetypeArtifactId=perspective-archetype \
 		-DarchetypeVersion=1.0
@@ -12,7 +12,7 @@ On Linux:
 On windows:
 
 	mvn archetype:generate ^
-		-DarchetypeRepository=https://nexus.open-web.nl/nexus/content/repositories/releases/ ^
+		-DarchetypeRepository=https://maven.open-web.nl/content/repositories/public/ ^
 		-DarchetypeGroupId=nl.openweb.archetype ^
 		-DarchetypeArtifactId=perspective-archetype ^
 		-DarchetypeVersion=1.0
