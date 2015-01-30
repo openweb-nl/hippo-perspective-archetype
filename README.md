@@ -1,5 +1,6 @@
 Perspective Archetype
 ==========================
+Please notice that the property "perspectiveName" is being used as a class name, therefore it is should follow the naming convention of a class
 
 On Linux:
 
