@@ -4,7 +4,7 @@
 
   <groupId>nl.openweb.archetype</groupId>
   <artifactId>perspective-archetype</artifactId>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
   <packaging>maven-archetype</packaging>
 
   <name>Perspective Archetype</name>
@@ -29,7 +29,7 @@
     <connection>scm:git:git@github.com:aharpour/hippo-perspective-archetype.git</connection>
     <developerConnection>scm:git:git@github.com:aharpour/hippo-perspective-archetype.git</developerConnection>
     <url>https://github.com/aharpour/hippo-perspective-archetype</url>
-    <tag>1.0</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <distributionManagement>
