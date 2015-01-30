@@ -27,7 +27,7 @@
 
   <scm>
     <connection>scm:git:git@github.com:aharpour/hippo-perspective-archetype.git</connection>
-    <developerConnection>scm:svn:git@github.com:aharpour/hippo-perspective-archetype.git</developerConnection>
+    <developerConnection>scm:git:git@github.com:aharpour/hippo-perspective-archetype.git</developerConnection>
     <url>https://github.com/aharpour/hippo-perspective-archetype</url>
   </scm>
 
