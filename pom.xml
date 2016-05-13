@@ -4,7 +4,7 @@
 
   <groupId>nl.openweb.archetype</groupId>
   <artifactId>perspective-archetype</artifactId>
-  <version>1.1-SNAPSHOT</version>
+  <version>10.2.01-SNAPSHOT</version>
   <packaging>maven-archetype</packaging>
 
   <name>Perspective Archetype</name>
@@ -47,7 +47,7 @@
       <extension>
         <groupId>org.apache.maven.archetype</groupId>
         <artifactId>archetype-packaging</artifactId>
-        <version>2.2</version>
+        <version>2.4</version>
       </extension>
     </extensions>
 
@@ -55,7 +55,7 @@
       <plugins>
         <plugin>
           <artifactId>maven-archetype-plugin</artifactId>
-          <version>2.2</version>
+          <version>2.4</version>
         </plugin>
         <plugin>
           <artifactId>maven-release-plugin</artifactId>

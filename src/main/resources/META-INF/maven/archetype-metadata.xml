@@ -5,6 +5,15 @@
   <requiredProperties>
     <requiredProperty key="perspectiveName"/>
   </requiredProperties>
+  <fileSets>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory></directory>
+      <includes>
+        <include>.gitignore</include>
+        <include>README.md</include>
+      </includes>
+    </fileSet>
+  </fileSets>
   <modules>
     <module id="${rootArtifactId}-cms" dir="cms" name="${rootArtifactId}-cms">
       <fileSets>
@@ -14,30 +23,25 @@
             <include>**/*.java</include>
           </includes>
         </fileSet>
-        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+        <fileSet filtered="true" encoding="UTF-8">
           <directory>src/main/resources</directory>
           <includes>
             <include>ui/*.html</include>
             <include>ui/*.properties</include>
-          </includes>
-        </fileSet>
-        <fileSet filtered="true" packaged="false" encoding="UTF-8">
-          <directory>src/main/resources</directory>
-          <includes>
             <include>**/*.xml</include>
+            <include>**/*.js</include>
+            <include>**/*.json</include>
+            <include>**/*.properties</include>
+            <include>**/*.html</include>
+            <include>**/*.txt</include>
           </includes>
         </fileSet>
-        <fileSet filtered="false" packaged="true" encoding="UTF-8">
+        <fileSet filtered="false" encoding="UTF-8">
           <directory>src/main/resources</directory>
           <includes>
-            <include>**/*.json</include>
             <include>**/*.png</include>
-            <include>**/*.js</include>
-            <include>**/*.map</include>
-            <include>**/*.html</include>
-            <include>**/*.properties</include>
-            <include>**/*.txt</include>
             <include>**/*.css</include>
+            <include>**/.bowerrc</include>
           </includes>
         </fileSet>
       </fileSets>

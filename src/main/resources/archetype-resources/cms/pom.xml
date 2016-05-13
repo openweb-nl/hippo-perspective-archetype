@@ -10,12 +10,13 @@
   <artifactId>${artifactId}</artifactId>
   <packaging>jar</packaging>
 
-  <name>${artifactId}</name>
+  <name>${parentArtifactId}-cms</name>
 
   <dependencies>
     <dependency>
       <groupId>org.onehippo.cms7</groupId>
       <artifactId>hippo-package-cms-dependencies</artifactId>
+      <scope>provided</scope>
       <type>pom</type>
       <exclusions>
         <exclusion>
@@ -37,8 +38,13 @@
       <artifactId>hippo-cms-api</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.onehippo.forge.webservices</groupId>
-      <artifactId>hippo-addon-restful-webservices</artifactId>
+      <groupId>org.apache.cxf</groupId>
+      <artifactId>cxf-rt-rs-security-cors</artifactId>
+    </dependency>
+    <!-- swagger dependency -->
+    <dependency>
+      <groupId>io.swagger</groupId>
+      <artifactId>swagger-jaxrs</artifactId>
     </dependency>
   </dependencies>
 

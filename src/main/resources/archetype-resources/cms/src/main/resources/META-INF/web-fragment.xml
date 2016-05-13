@@ -4,17 +4,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-fragment xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-fragment_3_0.xsd" metadata-complete="true" version="3.0">
+  <filter>
+    <filter-name>${perspectiveName}HippoAuthenticationFilter</filter-name>
+    <filter-class>${package}.webservices.HippoAuthenticationFilter</filter-class>
+  </filter>
 
+  <filter-mapping>
+    <filter-name>${perspectiveName}HippoAuthenticationFilter</filter-name>
+    <url-pattern>/${perspectiveName.toLowerCase()}/*</url-pattern>
+  </filter-mapping>
   <servlet>
     <servlet-name>${perspectiveName}FrameResourceServlet</servlet-name>
-    <servlet-class>${package}.ui.ResourceServlet</servlet-class>
+    <servlet-class>org.onehippo.cms7.utilities.servlet.ResourceServlet</servlet-class>
     <init-param>
       <param-name>jarPathPrefix</param-name>
-      <param-value>/${package.replace(".", "/")}/ui/frame</param-value>
+      <param-value>/${packageInPathFormat}/ui/frame</param-value>
     </init-param>
     <init-param>
       <param-name>allowedResourcePaths</param-name>
-      <param-value>^/.*\..*</param-value>
+      <param-value>^/.*${symbol_escape}..*</param-value>
+    </init-param>
+    <init-param>
+      <param-name>mimeTypes</param-name>
+      <param-value>
+        .css = text/css,
+        .js = text/javascript,
+        .gif = image/gif,
+        .png = image/png,
+        .ico = image/vnd.microsoft.icon,
+        .jpg = image/jpeg,
+        .jpeg = image/jpeg,
+        .eot = application/vnd.ms-fontobject,
+        .otf = application/vnd.ms-opentype,
+        .svg = image/svg+xml,
+        .swf = application/x-shockwave-flash
+        .ttf = application/x-font-ttf,
+        .woff = application/font-woff,
+        .html = text/html,
+        .htm = text/html
+      </param-value>
     </init-param>
     <init-param>
       <!--
@@ -31,14 +59,12 @@
     <servlet-class>org.apache.cxf.jaxrs.servlet.CXFNonSpringJaxrsServlet</servlet-class>
     <init-param>
       <param-name>jaxrs.serviceClasses</param-name>
-      <param-value>
-        org.onehippo.forge.webservices.jaxrs.RootResource, org.onehippo.forge.webservices.jaxrs.system.SystemResource, org.onehippo.forge.webservices.jaxrs.jcr.NodesResource, org.onehippo.forge.webservices.jaxrs.jcr.PropertiesResource, org.onehippo.forge.webservices.jaxrs.jcr.QueryResource, org.onehippo.forge.webservices.jaxrs.StatsResource, ${package}.webservices.GreetingResource
-      </param-value>
+      <param-value>${package}.webservices.GreetingResource</param-value>
     </init-param>
     <init-param>
       <param-name>jaxrs.providers</param-name>
       <param-value>
-        org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider, org.apache.cxf.rs.security.cors.CrossOriginResourceSharingFilter, org.onehippo.forge.webservices.jaxrs.exception.CustomWebApplicationExceptionMapper, ${package}.webservices.HippoAuthenticationRequestHandler
+        com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider, org.apache.cxf.rs.security.cors.CrossOriginResourceSharingFilter, ${package}.webservices.GenericExceptionMapper
       </param-value>
     </init-param>
     <init-param>

@@ -1,0 +1,19 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?><sv:node xmlns:sv="http://www.jcp.org/jcr/sv/1.0" sv:name="${parentArtifactId}">
+  <sv:property sv:name="jcr:primaryType" sv:type="Name">
+    <sv:value>frontend:plugincluster</sv:value>
+  </sv:property>
+  <sv:node sv:name="${perspectiveName}-perspective">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>frontend:plugin</sv:value>
+    </sv:property>
+    <sv:property sv:name="plugin.class" sv:type="String">
+      <sv:value>${package}.ui.${perspectiveName}</sv:value>
+    </sv:property>
+    <sv:property sv:name="wicket.id" sv:type="String">
+      <sv:value>service.tab</sv:value>
+    </sv:property>
+  </sv:node>
+</sv:node>
