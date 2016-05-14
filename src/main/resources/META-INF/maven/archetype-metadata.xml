@@ -10,7 +10,6 @@
       <directory></directory>
       <includes>
         <include>.gitignore</include>
-        <include>README.md</include>
       </includes>
     </fileSet>
   </fileSets>
@@ -21,6 +20,13 @@
           <directory>src/main/java</directory>
           <includes>
             <include>**/*.java</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>.bowerrc</include>
+            <include>package.json</include>
           </includes>
         </fileSet>
         <fileSet filtered="true" encoding="UTF-8">

@@ -1,0 +1,7 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+{
+  "cwd": "src/main/resources/${packageInPathFormat}/ui",
+  "directory": "frame/bower_components"
+}
