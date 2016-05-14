@@ -8,7 +8,7 @@ On Linux:
 		-DarchetypeRepository=https://maven.open-web.nl/content/repositories/public/ \
 		-DarchetypeGroupId=nl.openweb.archetype \
 		-DarchetypeArtifactId=perspective-archetype \
-		-DarchetypeVersion=1.0
+		-DarchetypeVersion=10.2.01
 ```
 On windows:
 ```BASH
@@ -16,5 +16,5 @@ On windows:
 		-DarchetypeRepository=https://maven.open-web.nl/content/repositories/public/ ^
 		-DarchetypeGroupId=nl.openweb.archetype ^
 		-DarchetypeArtifactId=perspective-archetype ^
-		-DarchetypeVersion=1.0
+		-DarchetypeVersion=10.2.01
 ```
