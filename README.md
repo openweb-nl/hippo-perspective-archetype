@@ -4,7 +4,7 @@ Please notice that the property "perspectiveName" is being used as a class name,
 
 On Linux:
 ```BASH
-	mvn archetype:generate \
+	mvn org.apache.maven.plugins:maven-archetype-plugin:2.4 \
 		-DarchetypeRepository=https://maven.open-web.nl/content/repositories/public/ \
 		-DarchetypeGroupId=nl.openweb.archetype \
 		-DarchetypeArtifactId=perspective-archetype \
@@ -12,7 +12,7 @@ On Linux:
 ```
 On windows:
 ```BASH
-	mvn archetype:generate ^
+	mvn org.apache.maven.plugins:maven-archetype-plugin:2.4 ^
 		-DarchetypeRepository=https://maven.open-web.nl/content/repositories/public/ ^
 		-DarchetypeGroupId=nl.openweb.archetype ^
 		-DarchetypeArtifactId=perspective-archetype ^
